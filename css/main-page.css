@@ -1,7 +1,75 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-* {
+*{
   font-family: "Poppins", serif;
   margin: 0;
   padding: 0;
 }
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+li {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #f2f5f7;
+}
+
+/* Logo */
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav-links {
+  display: flex;
+  column-gap: 5rem;
+  color: #23394c;
+}
+
+#nav-links li a {
+  color: #23394c;
+}
+
+#nav-links li a:hover {
+  color: #004285;
+  transform: scale(1.2);
+}
+
+/* SignUp & LogOut */
+.sign-logout a{
+  margin: 0 0.8rem;
+  color: #23394c;
+}
+
+/* Customer */
+.customer-sec {
+  background-color: white;
+}
+
+.topic {
+  display: flex;
+  justify-content: center;
+  column-gap: 1em;
+  color: #4b6380;
+}
+
+.cus-table th {
+  background-color: #004285;
+  color: #a6ccde;
+}
+
