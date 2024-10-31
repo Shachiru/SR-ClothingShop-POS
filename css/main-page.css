@@ -84,3 +84,7 @@ section {
 #sub-btn button:hover {
   background-color: #a6cddf;
 }
+
+#btnAddToCart {
+  background-color: #40b7e5;
+}
