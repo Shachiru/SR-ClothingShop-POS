@@ -77,3 +77,10 @@ section {
   color: #a6ccde;
 }
 
+#sub-btn button {
+  background-color: #40b7e5;
+}
+
+#sub-btn button:hover {
+  background-color: #a6cddf;
+}
