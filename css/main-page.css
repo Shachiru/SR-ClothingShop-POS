@@ -23,6 +23,10 @@ body {
   background-color: #f2f5f7;
 }
 
+section {
+  margin-top: 140px;
+}
+
 /* Logo */
 .logo {
   width: 60px;
