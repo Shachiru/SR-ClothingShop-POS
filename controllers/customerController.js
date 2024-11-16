@@ -79,7 +79,7 @@ function deleteCustomer(id) {
     let customer = findCustomer(id);
 
     if (customer == undefined) {
-        alert(`No customer with the ID: ${id} . Please chaech the ID again.`);
+        alert(`No customer with the ID: ${id} . Please enter the ID again.`);
     }else {
         let result = confirm("Confirm delete");
         if (result) {

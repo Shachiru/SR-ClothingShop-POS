@@ -205,7 +205,7 @@
                 Delete
             </button>
         </div>
-<!--------------------------------    Customer Table  --------------------------->
+        <!----------------    Customer Table  ------------>
         <table
                 class="table table-hover m-auto w-90 mt-5 table-responsive table-bordered"
                 id="tblCustomer"
@@ -235,7 +235,7 @@
             <h1>Items</h1>
         </div>
 
-        <!-------------------------------------- Item Manage ---------------------->
+        <!------------------------------ Item Manage ---------------------->
         <div class="container-fluid">
             <div class="row row-cols-2">
                 <div class="mb-3">
@@ -247,99 +247,36 @@
                     <input type="text" class="form-control" id="item_name"/>
                 </div>
                 <div class="mb-3">
+                    <label for="item_unitPrice" class="form-label">Unit Price</label>
+                    <input type="text" class="form-control" id="item_unitPrice"/>
+                </div>
+                <div class="mb-3">
                     <label for="item_qty" class="form-label">Quantity</label>
                     <input type="text" class="form-control" id="item_qty"/>
                 </div>
-                <div class="mb-3">
-                    <label for="item_unit_price" class="form-label">Unit Price</label>
-                    <input type="text" class="form-control" id="item_unit_price"/>
-                </div>
             </div>
 
-            <button type="button" class="btn btn-primary">Save</button>
-            <button type="button" class="btn btn-secondary">Clear</button>
-            <button type="button" class="btn btn-success">Update</button>
-            <button type="button" class="btn btn-danger">Delete</button>
+            <button type="button" class="btn btn-primary" id="item_btnSave">Save</button>
+            <button type="button" class="btn btn-secondary" id="item_btnClear">Clear</button>
+            <button type="button" class="btn btn-success" id="item_btnUpdate">Update</button>
+            <button type="button" class="btn btn-danger" id="item_btnDelete">Delete</button>
         </div>
-
-        <!--        <div class="row w-100">-->
-        <!--            <div class="col-6 col-md-6 text-center py-2 mt-4" id="sub-btn">-->
-        <!--                <button class="btn w-100 h-80 btn-light">-->
-        <!--                    <i class="fa-solid fa-plus"></i>-->
-        <!--                    New Item-->
-        <!--                </button>-->
-        <!--            </div>-->
-        <!--            <div class="col-6 col-md-6 text-center py-2 mt-4" id="sub-btn">-->
-        <!--                <button class="btn w-100 h-80 btn-light">-->
-        <!--                    <i class="fa-solid fa-clipboard-list"></i>-->
-        <!--                    View All Items-->
-        <!--                </button>-->
-        <!--            </div>-->
-        <!--        </div>-->
-
-        <!--        <div class="row justify-content-center mb-5">-->
-        <!--            <div class="col-10 mt-5">-->
-        <!--                <label for="">Find Item:</label>-->
-        <!--            </div>-->
-        <!--            <form role="search" class="d-flex justify-content-center mt-3 gap-3">-->
-        <!--                <div class="col-7 col-md-8">-->
-        <!--                    <input-->
-        <!--                            type="search"-->
-        <!--                            placeholder="search"-->
-        <!--                            aria-label="search"-->
-        <!--                            class="form-control me-2"-->
-        <!--                    />-->
-        <!--                </div>-->
-
-        <!--                <div class="col-3 col-md-2">-->
-        <!--                    <button class="btn btn-outline-success w-100">Search</button>-->
-        <!--                </div>-->
-        <!--            </form>-->
-        <!--        </div>-->
 
         <!-- Table Items -->
         <table
                 class="table table-hover m-auto w-90 mt-5 table-responsive table-bordered"
+                id="tblItem"
         >
-            <thead class="cus-table">
+            <thead class="item-table">
             <tr>
-                <th>Item ID</th>
-                <th>Item Name</th>
-                <th>Quantity</th>
-                <th>Unit Price</th>
+                <th scope="col">Item ID</th>
+                <th scope="col">Item Name</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Quantity</th>
             </tr>
             </thead>
-            <tbody class="table-secondary" id="c-tb">
-            <tr>
-                <td>I-001</td>
-                <td>Denims</td>
-                <td>90</td>
-                <td>3800.00</td>
-            </tr>
-            <tr>
-                <td>I-002</td>
-                <td>Polo T-shirt</td>
-                <td>70</td>
-                <td>2600.00</td>
-            </tr>
-            <tr>
-                <td>I-003</td>
-                <td>Frocks</td>
-                <td>85</td>
-                <td>2400.00</td>
-            </tr>
-            <tr>
-                <td>I-004</td>
-                <td>Blowse</td>
-                <td>50</td>
-                <td>1800.00</td>
-            </tr>
-            <tr>
-                <td>I-005</td>
-                <td>Shoes</td>
-                <td>40</td>
-                <td>8500.00</td>
-            </tr>
+            <tbody class="table-secondary" id="item-tbl">
+            <tr></tr>
             </tbody>
         </table>
     </div>
@@ -529,6 +466,8 @@
 <script src="db/database.js"></script>
 <script src="controllers/navigationController.js"></script>
 <script src="controllers/customerController.js"></script>
+<script src="controllers/itemController.js"></script>
 <script src="model/customerModel.js"></script>
+<script src="model/itemModel.js"></script>
 </body>
 </html>

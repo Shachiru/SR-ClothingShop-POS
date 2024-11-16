@@ -102,6 +102,11 @@ section {
   color: #a6ccde;
 }
 
+.item-table th {
+  background-color: #004285;
+  color: #a6ccde;
+}
+
 #sub-btn button {
   background-color: #40b7e5;
 }
