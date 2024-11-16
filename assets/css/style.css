@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", serif;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+li {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #f2f5f7;
+}
+
+section {
+  margin-top: 140px;
+}
+
+/* Logo */
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav-links {
+  display: flex;
+  column-gap: 5rem;
+  color: #23394c;
+}
+
+.nav-link:hover {
+  color: #004285;
+  transform: scale(1.1);
+  display: block;
+}
+
+/* SignUp & LogOut */
+.sign-logout a {
+  margin: 0 0.8rem;
+  color: #23394c;
+}
+
+/* Home - dashboard */
+.home {
+  padding: 3rem;
+}
+
+.fa-icon {
+  font-size: 2rem;
+  color: #4b6380;
+}
+
+.card-container {
+  display: flex;
+  column-gap: 2em;
+}
+
+.card {
+  padding: 1em;
+  line-height: 3rem;
+  width: 25%;
+  border-radius: 12px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #23394c;
+}
+
+/* Customer */
+.customer-sec {
+  background-color: white;
+}
+
+.topic {
+  display: flex;
+  justify-content: center;
+  column-gap: 1em;
+  color: #4b6380;
+}
+
+.cus-table th {
+  background-color: #004285;
+  color: #a6ccde;
+}
+
+#sub-btn button {
+  background-color: #40b7e5;
+}
+
+#sub-btn button:hover {
+  background-color: #a6cddf;
+}
+
+#btnAddToCart {
+  background-color: #40b7e5;
+}
+
+/* pie chart */
+.pie-chart {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #4caf50 0% 30%,
+    /* Item 1: 30% */ #ff9800 30% 55%,
+    /* Item 2: 25% */ #03a9f4 55% 75%,
+    /* Item 3: 20% */ #e91e63 75% 100% /* Item 4: 25% */
+  );
+  margin: 20px auto;
+}
+
+/* Legend for the chart */
+.legend {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.color-box {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+.item1 {
+  background-color: #4caf50;
+}
+.item2 {
+  background-color: #ff9800;
+}
+.item3 {
+  background-color: #03a9f4;
+}
+.item4 {
+  background-color: #e91e63;
+}
+
+/* bar chart */
+.chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  margin: 20px auto;
+  background-color: #e0f7fa;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Individual bars */
+.bar {
+  width: 30px;
+  background-color: #29b6f6;
+  text-align: center;
+  color: black;
+  font-size: 14px;
+  border-radius: 4px 4px 0 0;
+}
+
+/* Labels below bars */
+.label {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Custom heights for each bar */
+.bar[data-value="jan"] {
+  height: 70%;
+}
+.bar[data-value="feb"] {
+  height: 80%;
+}
+.bar[data-value="mar"] {
+  height: 60%;
+}
+.bar[data-value="apr"] {
+  height: 65%;
+}
+.bar[data-value="may"] {
+  height: 75%;
+}
+.bar[data-value="jun"] {
+  height: 55%;
+}
+.bar[data-value="jul"] {
+  height: 70%;
+}
+.bar[data-value="aug"] {
+  height: 85%;
+}
+.bar[data-value="sep"] {
+  height: 95%;
+}
+.bar[data-value="oct"] {
+  height: 75%;
+}
+.bar[data-value="nov"] {
+  height: 60%;
+}
+.bar[data-value="dec"] {
+  height: 90%;
+}
