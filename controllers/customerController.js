@@ -15,6 +15,7 @@ function clearTxtFields() {
 $("#cus_btnSave").click(function () {
     saveCustomer();
     $("#customer_id").empty();
+    loadCusIds();
     getAllCustomers();
     clearTxtFields();
 });
@@ -38,6 +39,14 @@ function saveCustomer() {
     }else {
         alert("Please fill all the fields");
     }
+}
+
+function loadCusIds() {
+    for (let i = 0; i < customerDB.length; i++) {
+        let cusId = customerDB[i].id;
+        $("#o_inputCusId").append(`<option>${cusId}</option>`);
+    }
+    document.getElementById("o_inputCusId").selectedIndex = -1;
 }
 
 // update button

@@ -293,7 +293,6 @@
                 <input
                         class="form-control border-black"
                         id="o_inputOrderId"
-                        placeholder=""
                         type="text"
                         disabled
                 />
@@ -303,25 +302,19 @@
                 <input
                         class="form-control border-black"
                         id="o_inputOrderDate"
-                        placeholder=""
                         type="date"
                 />
             </div>
             <div class="col-10 col-md-3 mb-0 mt-3">
-                <label class="form-label" for="o_inputCustId">Customer ID:</label>
-                <select class="form-select border-black" id="o_inputCustId">
-                    <option>C-001</option>
-                    <option>C-002</option>
-                    <option>C-003</option>
-                    <option>C-004</option>
-                    <option>C-005</option>
+                <label class="form-label" for="o_inputCusId">Customer ID:</label>
+                <select class="form-select border-black" id="o_inputCusId">
                 </select>
             </div>
             <div class="col-10 col-md-9 mb-0 mt-3">
                 <label class="form-label text-info-emphasis">Customer Name:</label>
                 <label
                         class="form-label text-info-emphasis"
-                        id="o_lblCustName"
+                        id="o_lblCusName"
                 ></label>
             </div>
             <div class="col-10 col-md-9 mb-0 mt-0">
@@ -330,17 +323,12 @@
                 >
                 <label
                         class="form-label text-info-emphasis"
-                        id="o_lblCustContact"
+                        id="o_lblCusContact"
                 ></label>
             </div>
             <div class="col-10 col-md-9 mb-0 mt-3">
                 <label class="form-label" for="o_inputItmCode">Item Code:</label>
                 <select class="form-select border-black" id="o_inputItmCode">
-                    <option>I-001</option>
-                    <option>I-002</option>
-                    <option>I-003</option>
-                    <option>I-004</option>
-                    <option>I-005</option>
                 </select>
             </div>
             <div class="col-10 col-md-6 mb-0 mt-3">
@@ -358,7 +346,7 @@
                 ></label>
             </div>
             <div class="col-10 col-md-9 col-sm-5 mb-0 mt-0">
-                <label class="form-label text-info-emphasis">Qty left:</label>
+                <label class="form-label text-info-emphasis">Available Qty::</label>
                 <label
                         class="form-label text-info-emphasis"
                         id="o_lblItmQtyLeft"
@@ -467,7 +455,9 @@
 <script src="controllers/navigationController.js"></script>
 <script src="controllers/customerController.js"></script>
 <script src="controllers/itemController.js"></script>
+<script src="controllers/placeOrderController.js"></script>
 <script src="model/customerModel.js"></script>
 <script src="model/itemModel.js"></script>
+<script src="model/order.js"></script>
 </body>
 </html>

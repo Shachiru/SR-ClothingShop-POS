@@ -63,3 +63,7 @@ var itemDB = [
         qty: "200",
     },
 ];
+
+var orderDB = [
+    {oID: "OID-001", orderDate: "2022/06/01", cusID: "C-001", discount: 5, cash: 3000, balance: []},
+]
