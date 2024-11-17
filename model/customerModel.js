@@ -1,6 +1,6 @@
 let customer = {
-  id: "",
-  name: "",
-  address: "",
-  contact: "",
+    id: "",
+    name: "",
+    address: "",
+    contact: "",
 };

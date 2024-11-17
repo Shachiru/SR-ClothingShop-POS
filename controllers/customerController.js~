@@ -1,5 +1,16 @@
-getAllCustomers();
 // clear button
+$("#cus_btnClear").click(function () {
+    clearTxtFields();
+});
+
+function clearTxtFields() {
+    $("#customer_id,#customer_name,#customer_address,#customer_contact").val("");
+    $("#customer_id,#customer_name,#customer_address,#customer_contact").addClass("border-secondary-subtle");
+    setCustomerBtn();
+    $(".err-label").css("display", "none");
+}
+
+// save button
 $("#cus_btnSave").click(function () {
     saveCustomer();
     $("#customer_id").empty();
@@ -7,51 +18,48 @@ $("#cus_btnSave").click(function () {
     getAllCustomers();
     clearTxtFields();
     setCustomerBtn();
-
 });
 
-$("#cus_btnUpdate").click(function () {
-    let id = $("#customer_id").val();
-    updateCustomer(id.trim());
-    getAllCustomers();
-    clearTxtFields();
-
-})
-$("#cus_btnDelete").click(function () {
-    let id = $("#customer_id").val();
-    deleteCustomer(id.trim());
-    getAllCustomers();
-    clearTxtFields();
-
-})
-$("#cus_btnClear").click(function () {
-    clearTxtFields();
-
-});
 function saveCustomer() {
     let cusId = $("#customer_id").val();
     if (findCustomer(cusId.trim()) == undefined) {
         let cusName = $("#customer_name").val();
         let cusAddress = $("#customer_address").val();
-
         let cusContact = $("#customer_contact").val();
 
         let newCustomer = Object.assign({}, customer);
+
         newCustomer.id = cusId;
         newCustomer.name = cusName;
         newCustomer.address = cusAddress;
-
         newCustomer.contact = cusContact;
 
         customerDB.push(newCustomer);
+
     } else {
         alert("Please fill all the fields");
     }
-
 }
-function updateCustomer(id) {
 
+function loadCusIds() {
+    for (let i = 0; i < customerDB.length; i++) {
+        let cusId = customerDB[i].id;
+        $("#o_inputCusId").append(`<option>${cusId}</option>`);
+    }
+    document.getElementById("o_inputCusId").selectedIndex = -1;
+}
+
+// update button
+$("#cus_btnUpdate").click(function () {
+    let id = $("#customer_id").val();
+    updateCustomer(id.trim());
+    getAllCustomers();
+    clearTxtFields();
+})
+
+function updateCustomer(id) {
     let customer = findCustomer(id);
+
     if (customer == undefined) {
         alert("Please fill all the fields");
     } else {
@@ -59,18 +67,26 @@ function updateCustomer(id) {
         if (result) {
             let cusName = $("#customer_name").val();
             let cusAddress = $("#customer_address").val();
-
             let cusContact = $("#customer_contact").val();
+
             customer.name = cusName;
             customer.address = cusAddress;
             customer.contact = cusContact;
         }
     }
-
 }
-function deleteCustomer(id) {
 
+// delete button
+$("#cus_btnDelete").click(function () {
+    let id = $("#customer_id").val();
+    deleteCustomer(id.trim());
+    getAllCustomers();
+    clearTxtFields();
+})
+
+function deleteCustomer(id) {
     let customer = findCustomer(id);
+
     if (customer == undefined) {
         alert(`No customer with the ID: ${id} . Please enter the ID again.`);
     } else {
@@ -89,14 +105,16 @@ function deleteCustomer(id) {
             }
         }
     }
-
 }
+
 function findCustomer(id) {
     return customerDB.find(function (customer) {
         return customer.id == id;
     })
-
 }
+
+getAllCustomers();
+
 function getAllCustomers() {
     $("#cus-tbl").empty();
 
@@ -116,17 +134,7 @@ function getAllCustomers() {
     }
     onTblRowClick();
 }
-// save button
-function loadCusIds() {
-    for (let i = 0; i < customerDB.length; i++) {
-        let cusId = customerDB[i].id;
-        $("#o_inputCusId").append(`<option>${cusId}</option>`);
-    }
-    document.getElementById("o_inputCusId").selectedIndex = -1;
 
-}
-// update button
-// delete button
 function onTblRowClick() {
     let singleClick;
 
@@ -158,12 +166,4 @@ function setDataToTxtFields(id, name, address, contact) {
     $("#customer_address").val(address);
     $("#customer_contact").val(contact);
     setCustomerBtn();
-}
-
-function clearTxtFields() {
-    $("#customer_id,#customer_name,#customer_address,#customer_contact").val("");
-    $("#customer_id,#customer_name,#customer_address,#customer_contact").addClass("border-secondary-subtle");
-    setCustomerBtn();
-    $(".err-label").css("display", "none");
-
 }

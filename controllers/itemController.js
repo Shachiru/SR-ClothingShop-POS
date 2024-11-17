@@ -1,26 +1,33 @@
+getAllItems();
 // clear button
-$("#item_btnClear").click(function () {
-    clearTxtFields();
-});
-
-function clearTxtFields() {
-    $("#item_id,#item_name,#item_unitPrice,#item_qty").val("");
-    $("#item_id,#item_name,#item_unitPrice,#item_qty").addClass("border-secondary-subtle");
-    setBtn();
-    $(".err-label").css("display", "none");
-}
-
-// save button
 $("#item_btnSave").click(function () {
     saveItem();
     $("#item_id").empty();
     loadItemCodes();
     getAllItems();
-    clearTxtFields();
+    clearItemTxtFields();
 });
 
+$("#item_btnUpdate").click(function () {
+    let id = $("#item_id").val();
+    updateItem(id.trim());
+    getAllItems();
+    clearItemTxtFields();
+});
+
+$("#item_btnDelete").click(function () {
+    let id = $("#item_id").val();
+    deleteItem(id.trim());
+    getAllItems();
+    clearItemTxtFields();
+})
+$("#item_btnClear").click(function () {
+    clearItemTxtFields();
+});
+// save button
 function saveItem() {
     let itemId = $("#item_id").val();
+
     if (findItem(itemId.trim()) == undefined) {
         let itemName = $("#item_name").val();
         let itemUnitPrice = $("#item_unitPrice").val();
@@ -34,22 +41,14 @@ function saveItem() {
         newItem.qty = itemQty;
 
         itemDB.push(newItem);
-
     } else {
         alert("Please fill all the fields");
     }
+
 }
-
-$("#item_btnUpdate").click(function () {
-    let id = $("#item_id").val();
-    updateItem(id.trim());
-    getAllItems();
-    clearTxtFields();
-});
-
 function updateItem(id) {
-    let item = findItem(id);
 
+    let item = findItem(id);
     if (item == undefined) {
         alert("Please fill all the fields");
     } else {
@@ -57,23 +56,15 @@ function updateItem(id) {
         if (result) {
             let itemName = $("#item_name").val();
             let itemUnitPrice = $("#item_unitPrice").val();
-            let itemQty = $("#item_qty").val();
 
+            let itemQty = $("#item_qty").val();
             item.name = itemName;
             item.price = itemUnitPrice;
             item.qty = itemQty;
         }
     }
 }
-
 // delete button
-$("#item_btnDelete").click(function () {
-    let id = $("#item_id").val();
-    deleteItem(id.trim());
-    getAllItems();
-    clearTxtFields();
-})
-
 function deleteItem(id) {
     let item = findItem(id);
 
@@ -95,15 +86,13 @@ function deleteItem(id) {
             }
         }
     }
-}
 
+}
 function findItem(id) {
     return itemDB.find(function (item) {
         return item.id == id;
-    })
+    });
 }
-
-getAllItems();
 
 function getAllItems() {
     $("#item-tbl").empty();
@@ -155,4 +144,12 @@ function setDataToItemTxtFields(id, name, price, qty) {
     $("#item_name").val(name);
     $("#item_unitPrice").val(price);
     $("#item_qty").val(qty);
+    setItemBtn();
+}
+
+function clearItemTxtFields() {
+    $("#item_id,#item_name,#item_unitPrice,#item_qty").val("");
+    $("#item_id,#item_name,#item_unitPrice,#item_qty").addClass("border-secondary-subtle");
+    setItemBtn();
+    $(".err-label").css("display", "none");
 }

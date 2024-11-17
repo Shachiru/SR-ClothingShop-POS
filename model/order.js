@@ -1,8 +1,8 @@
 let order = {
-  oID: "",
-  orderDate: "",
-  cusID: "",
-  discount: 0,
-  cash: 0,
-  balance: [],
+    oID: "",
+    orderDate: "",
+    cusID: "",
+    discount: 0,
+    cash: 0,
+    orderDetails: [],
 }
